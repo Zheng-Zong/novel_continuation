@@ -1,8 +1,7 @@
-import os
 import time
 import json
 import tiktoken
-import faiss
+import faiss as fs
 from langchain_community.document_loaders import TextLoader
 from langchain_community.vectorstores import FAISS
 from langchain_community.docstore.in_memory import InMemoryDocstore
@@ -21,7 +20,7 @@ class BookRetriever:
         self.book_title = book_title
         self.book_id = max(book["id"] for book in self.book_info) + 1
         
-        index = faiss.IndexFlatL2(len(self.embeddings.embed_query("小说数据集")))
+        index = fs.IndexFlatL2(len(self.embeddings.embed_query("小说数据集")))
         self.vector_store = FAISS(
             embedding_function=embeddings,
             index=index,
