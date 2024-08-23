@@ -1,0 +1,5 @@
+environment:
+  OPENAI_API_KEY: "YOUR_API_KEY"
+  OPENAI_API_BASE: "https://api.openai.com/v1"
+config:
+  book_info_path: "database/book_info.json"
