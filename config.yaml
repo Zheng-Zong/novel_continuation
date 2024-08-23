@@ -1,5 +1,8 @@
 environment:
   OPENAI_API_KEY: "YOUR_API_KEY"
-  OPENAI_API_BASE: "https://api.openai.com/v1"
 config:
   book_info_path: "database/book_info.json"
+  llm_model: "Yuan2-2B-Mars-hf"
+  llm_api_base: "http://localhost:8000/v1/"
+  embedding_model: "text-embedding-3-small"
+  embedding_api_base: "https://api.openai.nextizon.com/v1/"

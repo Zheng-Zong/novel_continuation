@@ -8,8 +8,8 @@ from modules.custom_chains import get_novel_continuation_chain
 book_info_path = config['book_info_path']
 book_info = utilities.load_book_info_json(book_info_path)
 
-embeddings = utilities.get_embeddings()
-llm = utilities.get_llm()
+embeddings = utilities.get_embeddings(model=config['embedding_model'], api_base=config['embedding_api_base'])
+llm = utilities.get_llm(model=config['llm_model'], api_base=config['llm_api_base'])
 
 
 def generate_novel_continuation(

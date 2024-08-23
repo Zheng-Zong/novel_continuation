@@ -36,13 +36,15 @@ def load_book_info_json(book_info_path):
         print(f"书籍数据加载失败：{e}")
 
 
-def get_embeddings(model="text-embedding-3-small"):
+def get_embeddings(model="text-embedding-3-small", api_base='https://api.openai.com/v1'):
     return OpenAIEmbeddings(
-        model=model
+        model=model,
+        openai_api_base=api_base
     )
 
 
-def get_llm(model='gpt-4o-mini'):
+def get_llm(model='gpt-4o-mini', api_base='https://api.openai.com/v1'):
     return ChatOpenAI(
-        model='gpt-4o-mini'
+        model=model,
+        openai_api_base=api_base
     )
